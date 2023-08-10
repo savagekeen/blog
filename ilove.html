@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- <input type="text" name="" id="input1">
+        <input type="text" name="" id="input2">
+        <button onclick="create()">create</button> -->
+    </div>
+<hr>
+<div>
+    <nav>
+        <table>
+            <tr>
+        <td id="name">Name</td>
+        <td id="age">Age</td>
+        <td id="class">class</td>
+        <td id="hobbies">Hobbies</td>
+    
+        <tbody id="push"></tbody>
+    </tr>
+    </table>
+    </nav>
+</div>
+<hr>
+<br>
+<button onclick="del()">-</button>
+<span id="fig">0</span>
+<button onclick="add()">+</button>
+<hr>
+<button onclick="previous()">previous</button>
+<img id="dispImg">
+<button onclick="next()">next</button>
+</body>
+<script>
+    // let input1 = document.getElementById('input1')
+    // let input2 = document.getElementById('input2')
+
+    //  function create(){
+    //     input2.value = input1.value.replaceAll("amala", "eba")
+    //  }
+
+    //object.html
+    let info = {
+        name: "Ayo",
+        Age: 3,
+        class: "JS",
+        hobbies: ["swimming", "Dancing", "Football"]
+    }
+    console.log(info);
+    let push = document.getElementById("push")
+    push.innerHTML = `
+    <main>
+        <td>${info.name}</td>
+        <td>>${info.Age}</td>
+        <td>${info.class}</td>
+        <td>${info.hobbies}</td>
+        </div>
+      `
+
+    // let figure = document.getElementById("fig")
+    let i = 1;
+    fig.innerHTML = i;
+ function add(){
+    fig.innerHTML = i;
+    if(i <= 9){
+        i++
+    }
+ }
+ function del(){
+    fig.innerHTML = i;
+    if(i >= 1){
+        i--
+    }
+ }
+
+
+
+ let dispImg = document.getElementById("dispImg")
+
+
+ let img = ["ball1.jpg", "ball5.jpg", "istockphoto-181668903-612x612.jpg"]
+dispImg.src = img[0]
+let currentIndex = 0;
+
+function next(index) {
+    currentIndex = (currentIndex + 1) % img.length;
+    console.log(currentIndex)
+    dispImg.src = img[currentIndex]
+
+}
+
+function previous(){
+    currentIndex = (currentIndex - 1) % img.length;
+    console.log(currentIndex)
+    dispImg.src = img[currentIndex]
+}
+</script>
+</html>
